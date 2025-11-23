@@ -10,17 +10,9 @@ public class Task {
         setCompleted(completed);
     }
 
-    public static List<Task> tasks;
-
-    public static void printTasks() {
-        for (Task task : tasks) {
-            System.out.println(task);
-        }
-    }
-
     // Override toString method
     public String toString() {
-        return getTitle() + " [" + getCompleted() + "]";
+        return getTitle() + ". | Completed: " + getCompleted();
     }
 
     // Getters and Setters
