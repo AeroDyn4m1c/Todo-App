@@ -1,5 +1,3 @@
-import java.util.List;
-
 public class Task {
     private String title;
     private boolean completed;

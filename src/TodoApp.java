@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class TodoApp {
+    // Define list of objects tasks from class Task
     private ArrayList<Task> tasks = new ArrayList<Task>();
     private Scanner scanner = new Scanner(System.in);
 
