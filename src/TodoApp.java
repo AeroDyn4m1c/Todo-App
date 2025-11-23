@@ -12,13 +12,17 @@ public class TodoApp {
     }
 
     public void removeTask(int index) {
-        tasks.remove(index);
-        System.out.println("Task removed.");
+        TaskRepository.removeTask(index);
     }
 
     public void listTasks() {
-        for (int i = 0; i < tasks.size(); i++) {
-            System.out.println((i + 1) + ". " + tasks.get(i));
+        ArrayList<Task> tasks = TaskRepository.listAllTasks();
+
+        int index = 1;
+        for (Task task : tasks) {
+            String completed = task.getCompleted() ? "Yes" : "No";
+            System.out.println(index + ". [" + task.getTitle() + "] | Completed: " + completed + " (DB ID = " + task.getId() + ")");
+            index++;
         }
     }
 
@@ -60,7 +64,7 @@ public class TodoApp {
                     index = scanner.nextInt();
                     System.out.println("Removing task...");
 
-                    removeTask(index - 1);
+                    removeTask(index);
                     break;
 
                 case 3: // List all tasks
