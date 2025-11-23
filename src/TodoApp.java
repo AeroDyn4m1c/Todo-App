@@ -7,8 +7,8 @@ public class TodoApp {
     private Scanner scanner = new Scanner(System.in);
 
     public void addTask(String title) {
-        tasks.add(new Task(title, false));
-        System.out.println("Task added.");
+        Task task = new Task (title, false);
+        TaskRepository.addTask(task);
     }
 
     public void removeTask(int index) {
